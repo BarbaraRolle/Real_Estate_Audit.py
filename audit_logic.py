@@ -1,5 +1,9 @@
-#  PROJECT 2: REAL ESTATE AUDIT 
-print(" STARTING PROJECT 2: REAL ESTATE AUDIT")
+import pandas as pd
+import random
+import os
+
+# PROJECT 2: REAL ESTATE AUDIT
+print(" STARTING PROJECT 2: REAL ESTATE AUDIT ")
 file_name = 'properties_2006.csv'
 
 # Ensure the file exists
@@ -17,7 +21,5 @@ YIELD_GOAL = 0.07
 df['Yield'] = (df['Monthly_Rent'] * 12) / df['Market_Value']
 df['Audit_Status'] = df['Yield'].apply(lambda x: "HIGH YIELD" if x >= YIELD_GOAL else "Standard")
 
-# Save final result
-df.to_csv('final_audit_results.csv', index=False)
-print("Real Estate Audit of 200 units complete.")
-print(df[['Property_ID', 'Yield', 'Audit_Status']].head(5))
+# THIS LINE SHOWS YOU THE RESULTS
+print(df.head(10))
